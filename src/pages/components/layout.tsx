@@ -1,5 +1,5 @@
 import Navbar from './navbar'
-import { Box, Grid, Stack } from '@mui/material'
+import { Box, Grid, Stack, Container } from '@mui/material'
 
 export default function Layout({ children }: any) {
   return (
@@ -16,8 +16,10 @@ export default function Layout({ children }: any) {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         backdropFilter: 'blur(20px)',
       }}>
-        <Navbar />
-        <main>{children}</main>
+        <Box sx={{ p: theme => theme.spacing(6) }}>
+          <Navbar />
+          <Box sx={{ px: theme => theme.spacing(6) }}>{children}</Box>
+        </Box>
       </Box>
     </Box >
   )
